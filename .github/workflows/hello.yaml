@@ -1,0 +1,21 @@
+# Workflow
+## Sould have name
+# Jobs
+## Should be inside the workflow
+# Steps
+## Should be inside the job
+
+# Actions
+## Should be inside the Steps
+
+name: Hello
+
+on:
+  workflow_dispatch: 
+
+jobs:
+  say-hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hello to everyone
+        run: echo "Hello Dosto"
