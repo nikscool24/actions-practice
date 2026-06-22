@@ -1,0 +1,24 @@
+
+name: code-linter
+
+on:
+  push:
+    branches: [main]
+    paths: ["*.py"]
+ 
+jobs:
+  code:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Current Repo
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+  
+      - name: Super-linter
+        uses: super-linter/super-linter@v8.7.0 # x-release-please-version
+        env:
+          GIT_TOKEN: ${{ secrets.GIT_TOKEN }}      
+    #   - name: Install linter
+    #     run: pip install ruff
